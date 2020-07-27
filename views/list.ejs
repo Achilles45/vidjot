@@ -1,0 +1,23 @@
+<h3 class="display-6 pb-3">All Ideas</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID Number</th>
+            <th>Title</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% ideas.forEach((idea)=>{ %>
+            <tr>
+                <td><%= idea.id %></td>
+                <td><%= idea.title %></td>
+                <td>
+                    <a href="" class="btn btn-primary">Show</a>
+                    <a href="/ideas/edit/<%= idea.id %>" class="btn btn-primary">Edit</a>
+                    <form action="/ideas/delete/<%= idea.id %>" method="post" class="d-inline">
+                    <input type="submit" value="Delete" class="btn btn-danger">
+                </form>
+                </td>
+            </tr>
+        <% }) %>  
